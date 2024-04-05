@@ -1,0 +1,15 @@
+{"videogiochi":[
+    {"Name":"Gran Turismo 7", "InStock":"30", "Compatibility":["Playstation 4", "Playstation 5"], "Pegi":"3", "Price":""},
+    {"Name":"Uncharted: The Nathan Drake collection", "InStock":"30", "Compatibility":["Playstation 4"], "Pegi":"16", "Price":""},
+    {"Name":"Uncharted: Legacy of Thieves Collection", "InStock":"30", "Compatibility":["Playstation 5", "Windows"], "Pegi":"16", "Price":""},
+    {"Name":"Grand Theft Auto 5", "InStock":"30", "Compatibility":["Playstation 3", "Playstation 4", "Playstation 5", "Xbox 360", "Xbox One", "Xbox Series X/S", "Windows"], "Pegi":"18", "Price":""},
+    {"Name":"Hearts of Iron 4", "InStock":"30", "Compatibility":["Linux", "Windows", "MacOS"], "Pegi":"7", "Price":""},
+    {"Name":"God of War", "InStock":"30", "Compatibility":["Playstation 4", "Windows"], "Pegi":"18", "Price":""},
+    {"Name":"Minecraft", "InStock":"30", "Compatibility":["Playstation 3", "Playstation 4", "Playstation 5", "Xbox 360", "Xbox One", "Xbox Series X/S", "Windows", "Linux", "IOS", "Android", "Nintendo Switch", "Nintendo 3DS"], "Pegi":"7", "Price":""},
+    {"Name":"Forza Horizon 7", "InStock":"30", "Compatibility":["Xbox One", "Windows"], "Pegi":"3", "Price":""},
+    {"Name":"Call of Duty: Modern Warfare 3", "InStock":"30", "Compatibility":["Playstation 5", "Playstation 4", "Xbox One", "Xbox Series X/S", "Windows"], "Pegi":"18", "Price":""},
+    {"Name":"FC 24", "InStock":"30", "Compatibility":["Playstation 5", "Playstation 4", "Xbox One", "Xbox Series X/S", "Windows", "Android", "Nintendo Switch"], "Pegi":"3", "Price":""},
+    {"Name":"F1 24", "InStock":"30", "Compatibility":["Playstation 5", "Playstation 4", "Xbox One", "Xbox Series X/S", "Windows"], "Pegi":"3", "Price":""},
+    {"Name":"Helldivers II", "InStock":"30", "Compatibility":["Playstation 5", "Windows"], "Pegi":"18", "Price":""},
+    {"Name":"Baldur's Gate 3", "InStock":"30", "Compatibility":["Playstation 5", "Xbox Series X/S", "Windows", "MacOS"], "Pegi":"18", "Price":""}
+]}
