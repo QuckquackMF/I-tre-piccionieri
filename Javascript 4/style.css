@@ -1,27 +1,45 @@
-h1{
-    text-align:center ;
+h1 {
+    text-align: center;
     font-size: 50px;
 }
-h2{
+
+h2 {
     font-size: 30px;
 }
-select{
+
+select {
     font-size: 20px;
 }
-input{
+
+input {
     font-size: 16px;
     width: 100px;
 }
-p{
+
+p {
     font-size: 20px;
 }
-.circle{
+
+.circle {
     width: 25px;
     height: 25px;
     border-radius: 50%;
 }
-button{
+
+button {
     width: 170px;
     height: 60px;
     font-size: 18px;
+}
+
+.popup {
+    display: none;
+    position: fixed;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #d3d2d2;
+    padding: 20px;
+    border: 1px solid #d3d2d2;
+    z-index: 1000;
 }
