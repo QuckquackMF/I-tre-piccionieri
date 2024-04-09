@@ -1,14 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Game Exe</title>
     <link rel="stylesheet" href="style.css" type="text/css">
-
 </head>
-
 <body>
     <div class="popup" id="agePopup">
         <p>Sei maggiorenne?</p>
@@ -24,7 +21,8 @@
         <h2 id="Sottotitolo">Select your game and see if it's available</h2>
         <p id="p_Game">Game</p>
         <select name="videogame" id="Select_Videogame" disabled>
-            <option value=" Baldur 's Gate 3">Baldur's Gate 3</option>
+            <option selected disabled>Videogioco</option>
+            <option value="Baldur 's Gate 3">Baldur's Gate 3</option>
             <option value="Call of Duty: Modern Warfare 3">Call of Duty: Modern Warfare 3</option>
             <option value="F1 23">F1 23</option>
             <option value="FC 24">FC 24</option>
@@ -37,10 +35,10 @@
             <option value="Minecraft">Minecraft</option>
             <option value="Uncharted: Legacy of Thieves Collection">Uncharted: Legacy of Thieves Collection</option>
             <option value="Uncharted: The Nathan Drake Collection">Uncharted: The Nathan Drake Collection</option>
-        </select>
-        <br><br>
+        </select><br /><br />
         <p id="p_Platform">Platform</p>
-        <select name="Platform" id="Select_PlatForm" disabled> disabled = "true"
+        <select name="Platform" id="Select_PlatForm" disabled>
+            <option selected disabled>Piattaforma</option>
             <option value="PS4">PS4</option>
             <option value="PS5">PS5</option>
             <option value="XBOX 360">XBOX 360</option>
@@ -53,15 +51,14 @@
             <option value="Android">Android</option>
             <option value="Nintendo 3DS">Nintendo 3DS</option>
             <option value="MacOS">MacOS</option>
-        </select>
-        <br><br>
+        </select><br /><br />
         <p id="p_Number">Number</p>
         <input type="number" id="Input_Quanti" disabled>
         <p id="p_Note">Item least: note</p>
         <button id="submitButton" onclick="">Check Availability</button>
 </body>
 <footer>
+    <script src="magazzino.json"></script>
     <script src="script.js"></script>
 </footer>
-
 </html>

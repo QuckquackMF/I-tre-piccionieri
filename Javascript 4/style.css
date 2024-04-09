@@ -33,7 +33,7 @@ button {
 }
 
 .popup {
-    display: none;
+    display: block;
     position: fixed;
     top: 40%;
     left: 50%;
