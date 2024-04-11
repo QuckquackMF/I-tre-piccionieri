@@ -1,19 +1,19 @@
 //#region variabili/costanti iniziali e JSON
 let json = {
     "videogiochi": [
-        {"Name":"Gran Turismo 7", "InStock":"30", "Compatibility":["Playstation 4", "Playstation 5"], "Pegi":"3", "Price":""},
-        {"Name":"Uncharted: The Nathan Drake Collection", "InStock":"27", "Compatibility":["Playstation 4"], "Pegi":"16", "Price":""},
-        {"Name":"Uncharted: Legacy of Thieves Collection", "InStock":"30", "Compatibility":["Playstation 5", "Windows"], "Pegi":"16", "Price":""},
-        {"Name":"Grand Theft Auto 5", "InStock":"56", "Compatibility":["Playstation 3", "Playstation 4", "Playstation 5", "Xbox 360", "Xbox One", "Xbox Series X/S", "Windows"], "Pegi":"18", "Price":""},
-        {"Name":"Hearts of Iron 4", "InStock":"45", "Compatibility":["Linux", "Windows", "MacOS"], "Pegi":"7", "Price":""},
-        {"Name":"God of War", "InStock":"10", "Compatibility":["Playstation 4", "Windows"], "Pegi":"18", "Price":""},
-        {"Name":"Minecraft", "InStock":"15", "Compatibility":["Playstation 3", "Playstation 4", "Playstation 5", "Xbox 360", "Xbox One", "Xbox Series X/S", "Windows", "Linux", "IOS", "Android", "Nintendo Switch", "Nintendo 3DS", "MacOS"], "Pegi":"7", "Price":""},
-        {"Name":"Forza Horizon 7", "InStock":"30", "Compatibility":["Xbox One", "Windows"], "Pegi":"3", "Price":""},
-        {"Name":"Call of Duty: Modern Warfare 3", "InStock":"80", "Compatibility":["Playstation 5", "Playstation 4", "Xbox One", "Xbox Series X/S", "Windows"], "Pegi":"18", "Price":""},
-        {"Name":"FC 24", "InStock":"60", "Compatibility":["Playstation 5", "Playstation 4", "Xbox One", "Xbox Series X/S", "Windows", "Android", "Nintendo Switch"], "Pegi":"3", "Price":""},
-        {"Name":"F1 23", "InStock":"39", "Compatibility":["Playstation 5", "Playstation 4", "Xbox One", "Xbox Series X/S", "Windows"], "Pegi":"3", "Price":""},
-        {"Name":"Helldivers II", "InStock":"0", "Compatibility":["Playstation 5", "Windows"], "Pegi":"18", "Price":""},
-        {"Name":"Baldur's Gate 3", "InStock":"110", "Compatibility":["Playstation 5", "Xbox Series X/S", "Windows", "MacOS"], "Pegi":"18", "Price":""}
+        {"Name":"Gran Turismo 7", "InStock":"30", "Compatibility":["Playstation 4", "Playstation 5"], "Pegi":"3", "Price":"79,99"},
+        {"Name":"Uncharted: The Nathan Drake Collection", "InStock":"27", "Compatibility":["Playstation 4"], "Pegi":"16", "Price":"19,99"},
+        {"Name":"Uncharted: Legacy of Thieves Collection", "InStock":"30", "Compatibility":["Playstation 5", "Windows"], "Pegi":"16", "Price":"49,99"},
+        {"Name":"Grand Theft Auto 5", "InStock":"56", "Compatibility":["Playstation 3", "Playstation 4", "Playstation 5", "Xbox 360", "Xbox One", "Xbox Series X/S", "Windows"], "Pegi":"18", "Price":"25"},
+        {"Name":"Hearts of Iron 4", "InStock":"45", "Compatibility":["Linux", "Windows", "MacOS"], "Pegi":"7", "Price":"7,99"},
+        {"Name":"God of War", "InStock":"10", "Compatibility":["Playstation 4", "Windows"], "Pegi":"18", "Price":"20"},
+        {"Name":"Minecraft", "InStock":"15", "Compatibility":["Playstation 3", "Playstation 4", "Playstation 5", "Xbox 360", "Xbox One", "Xbox Series X/S", "Windows", "Linux", "IOS", "Android", "Nintendo Switch", "Nintendo 3DS", "MacOS"], "Pegi":"7", "Price":"18,99"},
+        {"Name":"Forza Horizon 7", "InStock":"30", "Compatibility":["Xbox One", "Windows"], "Pegi":"3", "Price":"49,99"},
+        {"Name":"Call of Duty: Modern Warfare 3", "InStock":"80", "Compatibility":["Playstation 5", "Playstation 4", "Xbox One", "Xbox Series X/S", "Windows"], "Pegi":"18", "Price":"57,99"},
+        {"Name":"FC 24", "InStock":"60", "Compatibility":["Playstation 5", "Playstation 4", "Xbox One", "Xbox Series X/S", "Windows", "Android", "Nintendo Switch"], "Pegi":"3", "Price":"79,99"},
+        {"Name":"F1 23", "InStock":"39", "Compatibility":["Playstation 5", "Playstation 4", "Xbox One", "Xbox Series X/S", "Windows"], "Pegi":"3", "Price":"79,99"},
+        {"Name":"Helldivers II", "InStock":"0", "Compatibility":["Playstation 5", "Windows"], "Pegi":"18", "Price":"39,99"},
+        {"Name":"Baldur's Gate 3", "InStock":"110", "Compatibility":["Playstation 5", "Xbox Series X/S", "Windows", "MacOS"], "Pegi":"18", "Price":"69,99"}
     ]
 };
 let isAdult;
@@ -38,7 +38,6 @@ let f123;
 let helldiversII;
 let baldursGate3;
 //#endregion
-
 class Videogame{
     constructor(name, inStock, compatibility, pegi, price){
         this.name = name;
@@ -168,7 +167,9 @@ inputNumber.addEventListener('input', function(){
 
 buy.addEventListener('click', function(){
     getObject().inStock -= parseInt(inputNumber.value);
-    copieRimaste.textContent = "Copie rimaste: " + getObject().inStock;
+    let costo;
+    // da fare somma totale;
+    copieRimaste.textContent = "Copie rimaste: " + getObject().inStock + ", Costo totale: €";
     inputNumber.value = 0;
 })
 
