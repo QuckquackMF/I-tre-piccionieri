@@ -1,65 +1,64 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Game Exe</title>
-        <link rel="stylesheet" href="style.css" type="text/css">
-    </head>
-    <body>
-        <div class="popup" id="agePopup">
-            <p>ARE YOU 18?</p>
-            <button onclick="setAge(true)">Yes</button>
-            <button onclick="setAge(false)">No</button>
-        </div>
-        <div>
-            <h1>YOUR BEST GAME EXPERIENCE</h1>
-        </div>
-        <div>
-            <h2>Select your game and see if it's available</h2>
-            <p>Game</p>
-            <select name="videogame" id="Select_Videogame" disabled>
-                <option selected disabled>Videogioco</option>
-                <option value="Baldur 's Gate 3">Baldur's Gate 3</option>
-                <option value="Call of Duty: Modern Warfare 3">Call of Duty: Modern Warfare 3</option>
-                <option value="F1 23">F1 23</option>
-                <option value="FC 24">FC 24</option>
-                <option value="Forza Horizon 7">Forza Horizon 7</option>
-                <option value="Grand Theft Auto 5">Grand Theft Auto 5</option>
-                <option value="Gran Turismo 7">Gran Turismo 7</option>
-                <option value="God of War">God of War</option>
-                <option value="Hearts of Iron 4">Hearts of Iron 4</option>
-                <option value="Helldivers II">Helldivers II</option>
-                <option value="Minecraft">Minecraft</option>
-                <option value="Uncharted: Legacy of Thieves Collection">Uncharted: Legacy of Thieves Collection</option>
-                <option value="Uncharted: The Nathan Drake Collection">Uncharted: The Nathan Drake Collection</option>
-            </select><br /><br />
-            <p>Platform</p>
-            <select name="Platform" id="Select_PlatForm" disabled>
-                <option selected disabled>Piattaforma</option>
-                <option value="PS4">PS4</option>
-                <option value="PS5">PS5</option>
-                <option value="XBOX 360">XBOX 360</option>
-                <option value="XBOX ONE">XBOX ONE</option>
-                <option value="XBOX Series X/S">XBOX Series X/S</option>
-                <option value="Nintendo Switch">Nintendo Switch</option>
-                <option value="Windows">Windows</option>
-                <option value="Linux">Linux</option>
-                <option value="IOS">IOS</option>
-                <option value="Android">Android</option>
-                <option value="Nintendo 3DS">Nintendo 3DS</option>
-                <option value="MacOS">MacOS</option>
-            </select><br/><br/>
-            <p>Number</p>
-            <input type="number" id="Input_Quanti" min="1" disabled>
-            <p id="p_Note">Item least: note</p>
-            <button id="submitButton" onclick="">Check Availability</button>
-            <button id="buy_botton" onclick="" disabled>Buy now</button>
-            <h2 id="Buy_msg">Thanks for buying your games here</h2>
-        </div>
-    </body>
-    <footer>
-        <script src="magazzino.json"></script>
-        <script src="script.js"></script>
-    </footer>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Game Exe</title>
+    <link rel="stylesheet" href="style.css" type="text/css">
+</head>
+<body>
+    <div class="popup" id="agePopup">
+        <p>Sei maggiorenne?</p>
+        <button onclick="setAge(true)">Sì</button>
+        <button onclick="setAge(false)">No</button>
+    </div>
+    <div>
+        <h1 id="titolo">YOUR BEST GAME EXPERIENCE</h1>
+    </div>
+    <div>
+    </div>
+    <div>
+        <h2 id="Sottotitolo">Select your game and see if it's available</h2>
+        <p id="p_Game">Game</p>
+        <select name="videogame" id="Select_Videogame" disabled>
+            <option selected disabled>Videogioco</option>
+            <option value="Baldur 's Gate 3">Baldur's Gate 3</option>
+            <option value="Call of Duty: Modern Warfare 3">Call of Duty: Modern Warfare 3</option>
+            <option value="F1 23">F1 23</option>
+            <option value="FC 24">FC 24</option>
+            <option value="Forza Horizon 7">Forza Horizon 7</option>
+            <option value="Grand Theft Auto 5">Grand Theft Auto 5</option>
+            <option value="Gran Turismo 7">Gran Turismo 7</option>
+            <option value="God of War">God of War</option>
+            <option value="Hearts of Iron 4">Hearts of Iron 4</option>
+            <option value="Helldivers II">Helldivers II</option>
+            <option value="Minecraft">Minecraft</option>
+            <option value="Uncharted: Legacy of Thieves Collection">Uncharted: Legacy of Thieves Collection</option>
+            <option value="Uncharted: The Nathan Drake Collection">Uncharted: The Nathan Drake Collection</option>
+        </select>
+        <p id="p_Note">Fascia d'et&agrave;:</p><br />
+        <p id="p_Platform">Platform</p>
+        <select name="Platform" id="Select_PlatForm" disabled>
+            <option selected disabled>Piattaforma</option>
+            <option value="PS4">PS4</option>
+            <option value="PS5">PS5</option>
+            <option value="XBOX 360">XBOX 360</option>
+            <option value="XBOX ONE">XBOX ONE</option>
+            <option value="XBOX Series X/S">XBOX Series X/S</option>
+            <option value="Nintendo Switch">Nintendo Switch</option>
+            <option value="Windows">Windows</option>
+            <option value="Linux">Linux</option>
+            <option value="IOS">IOS</option>
+            <option value="Android">Android</option>
+            <option value="Nintendo 3DS">Nintendo 3DS</option>
+            <option value="MacOS">MacOS</option>
+        </select><br /><br /><br /><br />
+        <p id="p_Number">Number</p>
+        <input type="number" id="Input_Quanti" disabled>
+        <p id="copies">Copie rimaste:</p><br /><br />
+        <button id="buyBtn" disabled>BUY</button>
+</body>
+<footer>
+    <script src="script.js"></script>
+</footer>
 </html>
