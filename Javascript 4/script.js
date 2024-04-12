@@ -225,3 +225,48 @@ function getObject(){
             return baldursGate3;
     }
 }
+
+document.addEventListener("DOMContentLoaded", function() {
+    const images = document.querySelectorAll(".game-images img");
+    const indicators = document.querySelectorAll('.image-indicators .indicator');
+    let currentIndex = 0;
+    let rotationInterval;
+
+    function showNextImage() {
+        // Rimuovi la classe attiva da tutte le immagini
+        images.forEach(image => image.classList.remove('active'));
+
+        // Aggiungi la classe attiva all'immagine successiva
+        images[currentIndex].classList.add('active');
+
+        // Disattiva tutti gli indicatori e rimuovi il colore rosso
+        indicators.forEach(indicator => {
+            indicator.classList.remove('active');
+        });
+
+        // Attiva l'indicatore corrispondente e impostalo su rosso
+        indicators[currentIndex].classList.add('active');
+
+        // Aggiorna l'immagine di sfondo
+        const backgroundImage = document.querySelector('.background-image');
+        backgroundImage.style.backgroundImage = `url(${images[currentIndex].src})`;
+
+        // Passa all'indice dell'immagine successiva
+        currentIndex = (currentIndex + 1) % images.length;
+    }
+
+    // Inizialmente mostra la prima immagine
+    showNextImage();
+
+    // Imposta l'intervallo per mostrare l'immagine successiva ogni 5 secondi
+    rotationInterval = setInterval(showNextImage, 5000);
+
+    // Metti in pausa la rotazione automatica quando si clicca su un cerchio
+    indicators.forEach((indicator, index) => {
+        indicator.addEventListener('click', function() {
+            clearInterval(rotationInterval); // Metti in pausa la rotazione automatica
+            currentIndex = index; // Aggiorna l'indice corrente al cerchio cliccato
+            showNextImage(); // Mostra l'immagine corrispondente
+        });
+    });
+});
