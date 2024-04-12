@@ -18,6 +18,22 @@ let json = {
     ]
 };
 
+window.onload = function() {
+    granTurismo7 = new Videogame(json.videogiochi[0].Name, json.videogiochi[0].InStock, json.videogiochi[0].Compatibility, json.videogiochi[0].Pegi, json.videogiochi[0].Price);
+    unchartedTNDC = new Videogame(json.videogiochi[1].Name, json.videogiochi[1].InStock, json.videogiochi[1].Compatibility, json.videogiochi[1].Pegi, json.videogiochi[1].Price);
+    unchartedLOTC = new Videogame(json.videogiochi[2].Name, json.videogiochi[2].InStock, json.videogiochi[2].Compatibility, json.videogiochi[2].Pegi, json.videogiochi[2].Price);
+    grandTheftAuto5 = new Videogame(json.videogiochi[3].Name, json.videogiochi[3].InStock, json.videogiochi[3].Compatibility, json.videogiochi[3].Pegi, json.videogiochi[3].Price);
+    heartsOfIron4 = new Videogame(json.videogiochi[4].Name, json.videogiochi[4].InStock, json.videogiochi[4].Compatibility, json.videogiochi[4].Pegi, json.videogiochi[4].Price);
+    godOfWar = new Videogame(json.videogiochi[5].Name, json.videogiochi[5].InStock, json.videogiochi[5].Compatibility, json.videogiochi[5].Pegi, json.videogiochi[5].Price);
+    minecraft = new Videogame(json.videogiochi[6].Name, json.videogiochi[6].InStock, json.videogiochi[6].Compatibility, json.videogiochi[6].Pegi, json.videogiochi[6].Price);
+    forzaHorizon7 = new Videogame(json.videogiochi[7].Name, json.videogiochi[7].InStock, json.videogiochi[7].Compatibility, json.videogiochi[7].Pegi, json.videogiochi[7].Price);
+    callOfDutyMW3 = new Videogame(json.videogiochi[8].Name, json.videogiochi[8].InStock, json.videogiochi[8].Compatibility, json.videogiochi[8].Pegi, json.videogiochi[8].Price);
+    fc24 = new Videogame(json.videogiochi[9].Name, json.videogiochi[9].InStock, json.videogiochi[9].Compatibility, json.videogiochi[9].Pegi, json.videogiochi[9].Price);
+    f123 = new Videogame(json.videogiochi[10].Name, json.videogiochi[10].InStock, json.videogiochi[10].Compatibility, json.videogiochi[10].Pegi, json.videogiochi[10].Price);
+    helldiversII = new Videogame(json.videogiochi[11].Name, json.videogiochi[11].InStock, json.videogiochi[11].Compatibility, json.videogiochi[11].Pegi, json.videogiochi[11].Price);
+    baldursGate3 = new Videogame(json.videogiochi[12].Name, json.videogiochi[12].InStock, json.videogiochi[12].Compatibility, json.videogiochi[12].Pegi, json.videogiochi[12].Price);
+};
+
 //costanti contenenti elementi HTML
 const note = document.getElementById("p_Note");
 const S_videogame = document.getElementById("Select_Videogame");
@@ -29,7 +45,6 @@ const buy = document.getElementById("buyBtn");
 const price = document.getElementById("totPrice");
 
 let isAdult;
-
 //variabili che contengono gli oggetti
 let granTurismo7; 
 let unchartedTNDC;
@@ -162,7 +177,6 @@ inputNumber.addEventListener('input', function(){
     }else{
         buy.disabled = false;
     }
-
     //il prezzo totale viene ricalcolato ogni volta che l'input cambia
     price.textContent = "Total price: " + (parseFloat(getObject().price) * parseFloat(this.value)).toFixed(2);
 })
