@@ -152,14 +152,19 @@ S_platform.addEventListener('change', function(){
 })
 
 inputNumber.addEventListener('input', function(){
+    let correctNumber;
+    correctNumber = parseInt(this.value);
+    this.value = correctNumber;
+
     if(!(parseInt(getObject().inStock) >= parseInt(this.value))){
-        alert("Too many selected copies");
+        alert("The copies selected are not in stock");
         this.value = null;
     }else if(parseInt(this.value) < 0){
         this.value = 0;
     }else{
         buy.disabled = false;
     }
+
     //il prezzo totale viene ricalcolato ogni volta che l'input cambia
     price.textContent = "Total price: " + (parseFloat(getObject().price) * parseFloat(this.value)).toFixed(2);
 })
@@ -180,12 +185,12 @@ buy.addEventListener('click', function(){
             copieRimaste.textContent = "Copies remaining: " + getObject().inStock;
             inputNumber.value = 0;
             price.textContent = "";
-            alert("Purchase successful")
+            alert("Purchase successful: " + value)
         },
 
         function(error){
 
-            alert("Purchase not successful")
+            alert("Purchase not successful: " + error)
         }
     )
 })
