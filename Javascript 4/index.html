@@ -3,32 +3,27 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Game Exe</title>
-    <link rel="stylesheet" href="style.css" type="text/css"> <!-- Collegamento al file CSS -->
+    <title>Game Pigeon</title>
+    <link rel="stylesheet" href="style.css" type="text/css">
 </head>
 <body>
-    <!-- Popup per confermare l'età -->
+    <!--Age verification popup -->
     <div class="popup" id="agePopup">
-        <p>ARE YOU 18?</p> <!-- Domanda sull'età -->
-        <button onclick="setAge(true)">Yes</button> <!-- Pulsante per confermare l'età -->
-        <button onclick="setAge(false)">No</button> <!-- Pulsante per negare l'età -->
+        <p>ARE YOU 18?</p>
+        <button onclick="setAge(true)">Yes</button>
+        <button onclick="setAge(false)">No</button>
     </div>
-
-    <!-- Sfondo dinamico basato sull'immagine selezionata -->
+    <!--Background image container -->
     <div class="background-image"></div>
-
-    <!-- Contenitore principale -->
+    <!--Container for all images in the box-->
     <div class="container">
-        <!-- Immagini del gioco e indicatori -->
         <div class="game-images">
-            <!-- Immagine principale -->
             <img src="Immagini/GamePigeon.jpg" alt="Main Photo" id="mainImage">
-            <!-- Altre immagini del gioco -->
             <img src="Immagini/Baldurs-Gate-3.jpg" alt="Baldur's Gate 3">
-            <img src="Immagini/COD_MW3.jpeg" alt="Call of Duty: Modern Warfare 3">
-            <img src="Immagini/F1_23.jpeg" alt="F1 23">
-            <img src="Immagini/FC_24.jpeg" alt="FC 24">
-            <img src="Immagini/ForzaHorizon7.jpeg" alt="Forza Horizon 7">
+            <img src="Immagini/COD_MW3.jpg" alt="Call of Duty: Modern Warfare 3">
+            <img src="Immagini/F1_23.jpg" alt="F1 23">
+            <img src="Immagini/FC_24.jpg" alt="FC 24">
+            <img src="Immagini/ForzaHorizon7.jpg" alt="Forza Horizon 7">
             <img src="Immagini/GODofWAR.jpg" alt="God of War">
             <img src="Immagini/gt7.jpg" alt="Gran Turismo 7">
             <img src="Immagini/gta5.jpg" alt="Grand Theft Auto 5">
@@ -37,24 +32,32 @@
             <img src="Immagini/minecraft.jpeg" alt="Minecraft">
             <img src="Immagini/UnchartedLegacyofThievesCollection.jpeg" alt="Uncharted: Legacy of Thieves Collection">
             <img src="Immagini/UnchartedTheNathanDrakeCollection.jpg" alt="Uncharted: The Nathan Drake Collection">
-            <!-- Add other images here -->
-            <!-- Indicatori per selezionare le immagini -->
+            <!--Changing the image on-click with the circle buttons-->
             <div class="image-indicators">
-                <!-- Indicatori cliccabili per selezionare le immagini -->
                 <div class="indicator" onclick="showImage(1)"></div>
-                <!-- Aggiungi altri indicatori per le immagini qui -->
+                <div class="indicator" onclick="showImage(2)"></div>
+                <div class="indicator" onclick="showImage(3)"></div>
+                <div class="indicator" onclick="showImage(4)"></div>
+                <div class="indicator" onclick="showImage(5)"></div>
+                <div class="indicator" onclick="showImage(6)"></div>
+                <div class="indicator" onclick="showImage(7)"></div>
+                <div class="indicator" onclick="showImage(8)"></div>
+                <div class="indicator" onclick="showImage(9)"></div>
+                <div class="indicator" onclick="showImage(10)"></div>
+                <div class="indicator" onclick="showImage(11)"></div>
+                <div class="indicator" onclick="showImage(12)"></div>
+                <div class="indicator" onclick="showImage(13)"></div>
+                <div class="indicator" onclick="showImage(14)"></div>
             </div>
         </div>
         
-        <!-- Sidebar per selezionare il gioco e la piattaforma -->
+        <!--Sidebar which is the purchase part or the lower part of the box-->
         <div class="sidebar">
-            <!-- Titolo della sidebar -->
+            <!--Select game-->
             <h2>Select your game and see if it's available</h2>
-            <!-- Selezione del gioco -->
             <p id="p_Game">Game</p>
             <select name="videogame" id="Select_Videogame" disabled>
-                <!-- Opzioni per selezionare il gioco -->
-                <option selected disabled>VIDEOGAME</option>
+                <option selected disabled>Videogame</option>
                 <option value="Baldur 's Gate 3">Baldur's Gate 3</option>
                 <option value="Call of Duty: Modern Warfare 3">Call of Duty: Modern Warfare 3</option>
                 <option value="F1 23">F1 23</option>
@@ -69,10 +72,9 @@
                 <option value="Uncharted: Legacy of Thieves Collection">Uncharted: Legacy of Thieves Collection</option>
                 <option value="Uncharted: The Nathan Drake Collection">Uncharted: The Nathan Drake Collection</option>
             </select>
-            <!-- Selezione della piattaforma -->
+            <!--Select platform-->
             <p id="p_Note">Age Group:</p>
             <select name="Platform" id="Select_PlatForm" disabled>
-                <!-- Opzioni per selezionare la piattaforma -->
                 <option selected disabled>Platform</option>
                 <option value="PS4">PS4</option>
                 <option value="PS5">PS5</option>
@@ -87,22 +89,17 @@
                 <option value="Nintendo 3DS">Nintendo 3DS</option>
                 <option value="MacOS">MacOS</option>
             </select>
-            <!-- Input per specificare il numero di copie -->
             <br /><br /><br /><br />
+            <!--Copies bought info-->
             <p id="p_Number">Number</p>
             <input type="number" id="Input_Quanti" disabled>
-            <!-- Indicazione del numero di copie rimanenti -->
             <p id="copies">Copies left:</p><br /><br />
-            <!-- Pulsante per acquistare -->
             <button id="buyBtn" disabled>BUY</button>
-            <!-- Indicazione del prezzo totale -->
             <p id="totPrice">Total price: </p>
         </div>
     </div>
-
-    <!-- Inclusione dello script JavaScript -->
     <footer>
-        <script src="script.js"></script> <!-- Collegamento al file JavaScript -->
+        <script src="script.js"></script>
     </footer>
 </body>
 </html>

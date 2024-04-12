@@ -14,7 +14,7 @@ window.onload = function() {
         f123 = new Videogame(json.videogiochi[10].Name, json.videogiochi[10].InStock, json.videogiochi[10].Compatibility, json.videogiochi[10].Pegi, json.videogiochi[10].Price);
         helldiversII = new Videogame(json.videogiochi[11].Name, json.videogiochi[11].InStock, json.videogiochi[11].Compatibility, json.videogiochi[11].Pegi, json.videogiochi[11].Price);
         baldursGate3 = new Videogame(json.videogiochi[12].Name, json.videogiochi[12].InStock, json.videogiochi[12].Compatibility, json.videogiochi[12].Pegi, json.videogiochi[12].Price);
-    }).catch(error => console.log("Errore nel caricamento: ", error))
+    }).catch(error => console.log("Error loading: ", error))
     
 };
 //costanti contenenti elementi HTML
@@ -120,9 +120,9 @@ function setAge(isAdultValue) {
         options[8].disabled = true;
         options[10].disabled = true;
 
-        note.textContent = "Fascia d'età: Minorenne"
+        note.textContent = "Age: Underage"
     }else{
-        note.textContent = "Fascia d'età: Maggiorenne"
+        note.textContent = "Age: Adult"
     }
 }
 
@@ -141,7 +141,7 @@ S_videogame.addEventListener('change', function(){
     //prima di ricontrollare la compatibilità le opzioni per la piattaforma si resettano
     resetOptions();
     getObject().checkCompatibility(options);
-    copieRimaste.textContent = "Copie rimaste: " + getObject().inStock;
+    copieRimaste.textContent = "Copies remaining: " + getObject().inStock;
     inputNumber.value = "";
     inputNumber.disabled = true;
     buy.disabled = true;
@@ -153,8 +153,8 @@ S_platform.addEventListener('change', function(){
 
 inputNumber.addEventListener('input', function(){
     if(!(parseInt(getObject().inStock) >= parseInt(this.value))){
-        alert("Le copie selezionate sono troppe");
-        this.value -= 1;
+        alert("Too many selected copies");
+        this.value = null;
     }else if(parseInt(this.value) < 0){
         this.value = 0;
     }else{
@@ -168,24 +168,24 @@ inputNumber.addEventListener('input', function(){
 buy.addEventListener('click', function(){
     let buyGame = new Promise(function(resolve, reject){
         if(parseInt(inputNumber.value) != 0){
-            resolve("Copie acquistate");
+            resolve("Copies bought");
         }else{
-            reject("Copie esaurite");
+            reject("Copies out of stock");
         }
     })
 
     buyGame.then(
         function(value){
             getObject().inStock -= parseInt(inputNumber.value);
-            copieRimaste.textContent = "Copie rimaste: " + getObject().inStock;
+            copieRimaste.textContent = "Copies remaining: " + getObject().inStock;
             inputNumber.value = 0;
             price.textContent = "";
-            alert("Acquisto  andato a abuon fine")
+            alert("Purchase successful")
         },
 
         function(error){
 
-            alert("Acquisto Non andato a abuon fine")
+            alert("Purchase not successful")
         }
     )
 })
@@ -229,40 +229,40 @@ document.addEventListener("DOMContentLoaded", function() {
     let rotationInterval;
 
     function showNextImage() {
-        // Rimuovi la classe attiva da tutte le immagini
+        // Remove the active class from all images
         images.forEach(image => image.classList.remove('active'));
-
-        // Aggiungi la classe attiva all'immagine successiva
+    
+        // Add the active class to the next image
         images[currentIndex].classList.add('active');
-
-        // Disattiva tutti gli indicatori e rimuovi il colore rosso
+    
+        // Deactivate all indicators and remove the red color
         indicators.forEach(indicator => {
             indicator.classList.remove('active');
         });
-
-        // Attiva l'indicatore corrispondente e impostalo su rosso
+    
+        // Activate the corresponding indicator and set it to red
         indicators[currentIndex].classList.add('active');
-
-        // Aggiorna l'immagine di sfondo
+    
+        // Update background image
         const backgroundImage = document.querySelector('.background-image');
         backgroundImage.style.backgroundImage = `url(${images[currentIndex].src})`;
-
-        // Passa all'indice dell'immagine successiva
+    
+        // Move to the next image index
         currentIndex = (currentIndex + 1) % images.length;
-    }
+    }    
 
-    // Inizialmente mostra la prima immagine
+    // Initially show the first image
     showNextImage();
 
-    // Imposta l'intervallo per mostrare l'immagine successiva ogni 5 secondi
+    // Set interval to show the next image every 5 seconds
     rotationInterval = setInterval(showNextImage, 5000);
 
-    // Metti in pausa la rotazione automatica quando si clicca su un cerchio
-    indicators.forEach((indicator, index) => {
-        indicator.addEventListener('click', function() {
-            clearInterval(rotationInterval); // Metti in pausa la rotazione automatica
-            currentIndex = index; // Aggiorna l'indice corrente al cerchio cliccato
-            showNextImage(); // Mostra l'immagine corrispondente
-        });
+indicators.forEach((indicator, index) => {
+    indicator.addEventListener('click', function() {
+        clearInterval(rotationInterval); // Pause the automatic rotation
+        currentIndex = index; // Update the current index to the clicked circle
+        showNextImage(); // Show the corresponding image
+        rotationInterval = setInterval(showNextImage, 5000); // Restart the rotation interval
     });
+});
 });
