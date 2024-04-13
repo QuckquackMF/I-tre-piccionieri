@@ -112,7 +112,7 @@ function setAge(isAdultValue) {
     document.body.classList.remove("agePopupOpen");
     note.textContent = isAdult;
     S_videogame.disabled = false;
-
+    //se adulto disabilito i giochi pegi 18
     if(!isAdult){
         options[1].disabled = true;
         options[2].disabled = true;
@@ -155,7 +155,6 @@ inputNumber.addEventListener('input', function(){
     let correctNumber;
     correctNumber = parseInt(this.value);
     this.value = correctNumber;
-
     if(!(parseInt(getObject().inStock) >= parseInt(this.value))){
         alert("The copies selected are not in stock");
         this.value = null;
@@ -172,7 +171,7 @@ inputNumber.addEventListener('input', function(){
 //l'evento click del bottone viene gestito con una promise
 buy.addEventListener('click', function(){
     let buyGame = new Promise(function(resolve, reject){
-        if(parseInt(inputNumber.value) != 0){
+        if(parseInt(inputNumber.value) > 0){
             resolve("Copies bought");
         }else{
             reject("Copies out of stock");
